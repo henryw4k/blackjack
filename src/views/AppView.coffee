@@ -20,11 +20,20 @@ class window.AppView extends Backbone.View
 
   stand: ->
     @model.get('dealerHand').models[0].flip()
+    @model.get('dealerHand').hit()  while @model.get('dealerHand').minScore() <= 17
 
     # alert @model.get(minScore())
     # alert @model.get('playerHand').minScore()
     # alert @model.get('dealerHand').minScore()
-    @model.get('dealerHand').hit()  while @model.get('dealerHand').minScore() <= 17
+    player = @model.get('playerHand').minScore()
+    dealer = @model.get('dealerHand').minScore()
+
+    if player > dealer
+      alert "player wins"
+    else if player < dealer
+      alert "dealer wins"
+    else
+      alert "push"
 
 
     # if dealer hand is < 17, dealer hits.
