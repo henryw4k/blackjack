@@ -6,3 +6,11 @@ class window.App extends Backbone.Model
     @set 'playerHand', deck.dealPlayer()
     @set 'dealerHand', deck.dealDealer()
 
+    console.log @get 'playerHand'
+    console.log @get 'dealerHand'
+
+    # show: ->
+    #  (@get 'dealerHand').models[0].flip()
+
+    # console.log 'hi'
+    # (@get 'dealerHand').models[0].flip()
